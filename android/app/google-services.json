@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "75320636540",
+    "project_id": "balanced-meal-copy",
+    "storage_bucket": "balanced-meal-copy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75320636540:android:297294f6ea3a98255a45f9",
+        "android_client_info": {
+          "package_name": "com.example.balanced_meal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDon-rjG_rtDiy6D7tqmsOeT8Cn3vubHD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75320636540:android:de4ea45fffbafc405a45f9",
+        "android_client_info": {
+          "package_name": "com.example.calorie_care"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDon-rjG_rtDiy6D7tqmsOeT8Cn3vubHD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
