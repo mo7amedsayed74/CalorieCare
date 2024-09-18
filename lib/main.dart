@@ -4,11 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'cubit/bloc_observer.dart';
-import 'cubit/cubit.dart';
+import 'cubit/app_cubit/cubit.dart';
 import 'firebase_options.dart';
 
-
-void main()async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

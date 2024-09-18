@@ -1,7 +1,7 @@
-import 'package:calorie_care/cubit/states.dart';
+import 'package:calorie_care/cubit/app_cubit/states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../model/order_model.dart';
+import '../../model/order_model.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(InitialAppState());

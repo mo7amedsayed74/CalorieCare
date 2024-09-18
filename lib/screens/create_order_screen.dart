@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../components/carbs_and_price.dart';
 import '../components/category.dart';
-import '../cubit/cubit.dart';
-import '../cubit/states.dart';
+import '../cubit/app_cubit/cubit.dart';
+import '../cubit/app_cubit/states.dart';
 import '../custom_widgets/back_button.dart';
 import '../json/jsons.dart';
 

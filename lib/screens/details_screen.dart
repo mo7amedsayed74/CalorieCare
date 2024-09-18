@@ -2,7 +2,7 @@ import 'package:calorie_care/helper.dart';
 import 'package:flutter/material.dart';
 
 import '../components/details_fields.dart';
-import '../cubit/cubit.dart';
+import '../cubit/app_cubit/cubit.dart';
 import '../custom_widgets/back_button.dart';
 import '../custom_widgets/custom_button.dart';
 import 'create_order_screen.dart';

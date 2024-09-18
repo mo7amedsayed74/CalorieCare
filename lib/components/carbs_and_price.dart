@@ -2,8 +2,8 @@ import 'package:calorie_care/helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit/cubit.dart';
-import '../cubit/states.dart';
+import '../cubit/app_cubit/cubit.dart';
+import '../cubit/app_cubit/states.dart';
 import '../custom_widgets/custom_button.dart';
 import '../screens/order_summary_screen.dart';
 
