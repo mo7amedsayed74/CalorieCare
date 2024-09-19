@@ -1,3 +1,4 @@
+import 'package:calorie_care/cubit/auth_cubit/auth_cubit.dart';
 import 'package:calorie_care/screens/register_page.dart';
 import 'package:calorie_care/widgets/login_button.dart';
 import 'package:calorie_care/widgets/login_image.dart';
@@ -7,6 +8,8 @@ import 'package:calorie_care/widgets/login_title.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -55,13 +58,11 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         _passwordError = 'Please enter your password';
       });
-    }
-    else  if (value.length<6) {
+    } else if (value.length < 6) {
       setState(() {
         _passwordError = 'Password must greater than 6 chars';
       });
-    }
-    else {
+    } else {
       setState(() {
         _passwordError = null;
       });
@@ -87,9 +88,9 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                LoginImage(topPadding: 50,),
+                const LoginImage(topPadding: 50),
                 const SizedBox(height: 10),
-                LoginTitle(title: 'LOGIN',),
+                const LoginTitle(title: 'LOGIN'),
                 const SizedBox(height: 20),
                 LoginTextField(
                   keyboardType: TextInputType.emailAddress,
@@ -100,12 +101,12 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 20),
                 LoginTextField(
-
                   controller: _passwordController,
                   labelText: 'Password',
                   prefixIcon: Icons.lock,
                   obscureText: _obscureText,
-                  suffixIcon: _obscureText ? Icons.visibility : Icons.visibility_off,
+                  suffixIcon:
+                      _obscureText ? Icons.visibility : Icons.visibility_off,
                   onSuffixIconPressed: _togglePasswordVisibility,
                   errorText: _passwordError,
                 ),
@@ -114,17 +115,21 @@ class _LoginPageState extends State<LoginPage> {
                   text: 'Login',
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {
-
+                      AuthCubit.get(context).userLogin(
+                        email: _emailController.text,
+                        password: _passwordController.text,
+                      );
                     }
                   },
                 ),
                 const SizedBox(height: 20),
                 LoginLink(
-                text:   'Don\'t have an account? Register',
+                  text: 'Don\'t have an account? Register',
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterPage()),
                     );
                   },
                 ),

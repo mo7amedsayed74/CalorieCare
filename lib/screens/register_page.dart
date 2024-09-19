@@ -1,3 +1,4 @@
+import 'package:calorie_care/cubit/auth_cubit/auth_cubit.dart';
 import 'package:calorie_care/screens/login_page.dart';
 import 'package:calorie_care/widgets/login_button.dart';
 import 'package:calorie_care/widgets/login_image.dart';
@@ -7,6 +8,8 @@ import 'package:calorie_care/widgets/login_title.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -48,7 +51,6 @@ class _RegisterPageState extends State<RegisterPage> {
     });
   }
 
-
   void _validateEmail() {
     final value = _emailController.text;
     if (value.isEmpty) {
@@ -72,13 +74,11 @@ class _RegisterPageState extends State<RegisterPage> {
       setState(() {
         _phoneError = 'Please enter your phone number';
       });
-    }
-     else if (value.length !=11) {
+    } else if (value.length != 11) {
       setState(() {
         _phoneError = 'Please enter correct phone number';
       });
-    }
-    else {
+    } else {
       setState(() {
         _phoneError = null;
       });
@@ -91,13 +91,11 @@ class _RegisterPageState extends State<RegisterPage> {
       setState(() {
         _passwordError = 'Please enter your password';
       });
-    }
-  else  if (value.length<6) {
+    } else if (value.length < 6) {
       setState(() {
         _passwordError = 'Password must greater than 6 chars';
       });
-    }
-    else {
+    } else {
       setState(() {
         _passwordError = null;
       });
@@ -143,8 +141,8 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                LoginImage(topPadding: 0),
-                LoginTitle(title: 'REGISTER'),
+                const LoginImage(topPadding: 0),
+                const LoginTitle(title: 'REGISTER'),
 
                 const SizedBox(height: 5),
 
@@ -213,7 +211,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   text: 'Register',
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {
-                      // Handle registration logic
+                      AuthCubit.get(context).userRegister(
+                        name: _nameController.text,
+                        phone: _phoneController.text,
+                        email: _emailController.text,
+                        password: _passwordController.text,
+                      );
                     }
                   },
                 ),
