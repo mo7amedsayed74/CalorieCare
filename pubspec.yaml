@@ -70,6 +70,7 @@ flutter:
     - assets/images/carbs/
     - assets/images/meats/
     - assets/images/vegetables/
+    - assets/images/doctors/
 
   #   - images/a_dot_ham.jpeg
 

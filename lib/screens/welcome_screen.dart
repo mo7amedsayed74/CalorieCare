@@ -1,4 +1,5 @@
 import 'package:calorie_care/helper.dart';
+import 'package:calorie_care/screens/doctors_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../custom_widgets/custom_button.dart';
@@ -42,6 +43,11 @@ class WelcomeScreen extends StatelessWidget {
               CustomButton(
                 text: 'order food',
                 onPressed: () => context.push(goTo: DetailsScreen()),
+              ),
+              const SizedBox(height: 20),
+              CustomButton(
+                text: 'Book with a doctor',
+                onPressed: () => context.push(goTo: DoctorsScreen()),
               ),
             ],
           ),

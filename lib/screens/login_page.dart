@@ -1,5 +1,6 @@
 import 'package:calorie_care/cubit/auth_cubit/auth_cubit.dart';
 import 'package:calorie_care/screens/register_page.dart';
+import 'package:calorie_care/screens/welcome_screen.dart';
 import 'package:calorie_care/widgets/login_button.dart';
 import 'package:calorie_care/widgets/login_image.dart';
 import 'package:calorie_care/widgets/login_link.dart';
@@ -114,12 +115,11 @@ class _LoginPageState extends State<LoginPage> {
                 LoginButton(
                   text: 'Login',
                   onPressed: () {
-                    if (_formKey.currentState?.validate() ?? false) {
-                      AuthCubit.get(context).userLogin(
-                        email: _emailController.text,
-                        password: _passwordController.text,
-                      );
-                    }
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WelcomeScreen()),
+                    );
                   },
                 ),
                 const SizedBox(height: 20),
