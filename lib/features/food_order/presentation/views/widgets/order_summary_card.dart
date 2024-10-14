@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit/app_cubit/cubit.dart';
-import '../cubit/app_cubit/states.dart';
-import '../custom_widgets/product_image.dart';
-import '../model/order_model.dart';
+import 'product_image.dart';
+import '../../../data/models/order_model.dart';
+import '../../manger/app_cubit/cubit.dart';
+import '../../manger/app_cubit/states.dart';
 import 'counter_buttons.dart';
 
 class OrderSummaryCard extends StatelessWidget {

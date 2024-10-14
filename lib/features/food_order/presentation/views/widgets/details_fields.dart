@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../custom_widgets/custom_text_form_field.dart';
+import 'custom_text_form_field.dart';
 import 'dropdownbuttonformfield.dart';
 
 class MyFields extends StatelessWidget {

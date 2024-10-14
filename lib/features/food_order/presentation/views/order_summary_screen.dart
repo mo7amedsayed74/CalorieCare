@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../components/carbs_and_price.dart';
-import '../components/order_summary_card.dart';
-import '../cubit/app_cubit/cubit.dart';
-import '../cubit/app_cubit/states.dart';
-import '../custom_widgets/back_button.dart';
+import 'widgets/carbs_and_price.dart';
+import 'widgets/order_summary_card.dart';
+import 'widgets/back_button.dart';
+import '../manger/app_cubit/cubit.dart';
+import '../manger/app_cubit/states.dart';
 
 class OrderSummeryScreen extends StatelessWidget {
   const OrderSummeryScreen({super.key});

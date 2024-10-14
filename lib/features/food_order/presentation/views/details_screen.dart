@@ -1,10 +1,10 @@
-import 'package:calorie_care/helper.dart';
+import 'package:calorie_care/core/utiles/helper.dart';
 import 'package:flutter/material.dart';
 
-import '../components/details_fields.dart';
-import '../cubit/app_cubit/cubit.dart';
-import '../custom_widgets/back_button.dart';
-import '../custom_widgets/custom_button.dart';
+import 'widgets/details_fields.dart';
+import 'widgets/back_button.dart';
+import '../../../../core/shared_widgets/custom_button.dart';
+import '../manger/app_cubit/cubit.dart';
 import 'create_order_screen.dart';
 
 class DetailsScreen extends StatelessWidget {

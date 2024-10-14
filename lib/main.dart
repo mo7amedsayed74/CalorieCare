@@ -1,11 +1,11 @@
-import 'package:calorie_care/screens/login_page.dart';
-import 'package:calorie_care/screens/welcome_screen.dart';
+import 'package:calorie_care/features/auth/presentation/view_model/auth_cubit/auth_cubit.dart';
+import 'package:calorie_care/features/auth/presentation/views/login_page.dart';
+import 'package:calorie_care/features/food_order/presentation/manger/app_cubit/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-import 'cubit/bloc_observer.dart';
-import 'cubit/app_cubit/cubit.dart';
+import 'core/utiles/bloc_observer.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -23,8 +23,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AppCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => AppCubit()),
+        BlocProvider(create: (context) => AuthCubit()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -38,8 +41,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home:  const LoginPage(),
-        //home: const CreateOrderScreen(),
+        home: const LoginPage(),
       ),
     );
   }

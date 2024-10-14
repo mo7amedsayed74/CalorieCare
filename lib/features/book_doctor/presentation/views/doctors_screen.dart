@@ -18,28 +18,30 @@ class DoctorsScreen extends StatelessWidget {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: const Color(0xffED5500), // Border color
-                        width: 2.5, // Border width
-                      )),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: const Color(0xffED5500), // Border color
+                      width: 2.5, // Border width
+                    ),
+                  ),
                   child: const Icon(
                     Icons.arrow_back,
                     size: 25,
-                    color: const Color(0xffED5500),
+                    color: Color(0xffED5500),
                   ),
                 ),
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.26,
               ),
-              Center(
+              const Center(
                 child: Text(
                   'Doctors',
                   style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: const Color(0xffED5500)),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xffED5500),
+                  ),
                 ),
               ),
             ],
@@ -56,9 +58,10 @@ class DoctorsScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.9,
                 height: MediaQuery.of(context).size.height * 0.574,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border:
-                        Border.all(color: const Color(0xffAFAFAF), width: 0.5)),
+                  borderRadius: BorderRadius.circular(10),
+                  border:
+                      Border.all(color: const Color(0xffAFAFAF), width: 0.5),
+                ),
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
@@ -68,41 +71,42 @@ class DoctorsScreen extends StatelessWidget {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                border: Border.all(
-                                    color: const Color(0xffED5500),
-                                    width: 0.5)),
-                            child: Image(
-                                image: AssetImage(
-                                    'assets/images/doctors/Ellipse 37.png')),
+                              borderRadius: BorderRadius.circular(50),
+                              border: Border.all(
+                                  color: const Color(0xffED5500), width: 0.5),
+                            ),
+                            child: const Image(
+                              image: AssetImage(
+                                  'assets/images/doctors/Ellipse 37.png'),
+                            ),
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.04,
-                          ),
-                          Column(
+                              width: MediaQuery.of(context).size.width * 0.04),
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Dr.Ahmed Mohammed',
                                 style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
                               ),
                               Text(
                                 'Nutritionist',
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff929292)),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff929292),
+                                ),
                               ),
                             ],
                           )
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.04,
-                      ),
+                          height: MediaQuery.of(context).size.height * 0.04),
                       Row(
                         children: [
                           const Icon(
@@ -111,20 +115,19 @@ class DoctorsScreen extends StatelessWidget {
                             size: 25,
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Text(
+                              width: MediaQuery.of(context).size.width * 0.02),
+                          const Text(
                             'Type : Follow-ups nutrition',
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                            ),
                           )
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
-                      ),
+                          height: MediaQuery.of(context).size.height * 0.01),
                       Row(
                         children: [
                           const Icon(
@@ -133,20 +136,19 @@ class DoctorsScreen extends StatelessWidget {
                             size: 25,
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Text(
+                              width: MediaQuery.of(context).size.width * 0.02),
+                          const Text(
                             'Audio and Video sessions',
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                            ),
                           )
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
-                      ),
+                          height: MediaQuery.of(context).size.height * 0.01),
                       Row(
                         children: [
                           const Icon(
@@ -155,20 +157,19 @@ class DoctorsScreen extends StatelessWidget {
                             size: 25,
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Text(
+                              width: MediaQuery.of(context).size.width * 0.02),
+                          const Text(
                             'Arabic , English',
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                            ),
                           )
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
-                      ),
+                          height: MediaQuery.of(context).size.height * 0.01),
                       Row(
                         children: [
                           const Icon(
@@ -177,14 +178,14 @@ class DoctorsScreen extends StatelessWidget {
                             size: 25,
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Text(
+                              width: MediaQuery.of(context).size.width * 0.02),
+                          const Text(
                             '7 years of experience',
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                            ),
                           )
                         ],
                       ),
@@ -200,9 +201,8 @@ class DoctorsScreen extends StatelessWidget {
                             size: 25,
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Text(
+                              width: MediaQuery.of(context).size.width * 0.02),
+                          const Text(
                             'Earliest availability',
                             style: TextStyle(
                                 fontSize: 18,
@@ -210,12 +210,13 @@ class DoctorsScreen extends StatelessWidget {
                                 color: Colors.black),
                           ),
                           const Spacer(),
-                          Text(
+                          const Text(
                             '20/10 - 7:00 pm',
                             style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
@@ -231,44 +232,45 @@ class DoctorsScreen extends StatelessWidget {
                             size: 25,
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Text(
+                              width: MediaQuery.of(context).size.width * 0.02),
+                          const Text(
                             'Price',
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                            ),
                           ),
                           const Spacer(),
-                          Text(
+                          const Text(
                             '300 EGP / 30 minute',
                             style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
+                      const SizedBox(height: 15),
                       SizedBox(
-                        height: 15,
-                      ),
-                      Container(
                         width: 150,
                         child: ElevatedButton(
                           onPressed: () => _showAlert(context),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFFF25700),
+                            backgroundColor: const Color(0xFFF25700),
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 12),
+                              horizontal: 30,
+                              vertical: 12,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               'Book Now!',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -282,9 +284,7 @@ class DoctorsScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 25,
-            ),
+            const SizedBox(height: 25),
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.9,
@@ -306,14 +306,14 @@ class DoctorsScreen extends StatelessWidget {
                                 border: Border.all(
                                     color: const Color(0xffED5500),
                                     width: 0.5)),
-                            child: Image(
+                            child: const Image(
                                 image: AssetImage(
                                     'assets/images/doctors/Ellipse 38.png')),
                           ),
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.04,
                           ),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
@@ -328,7 +328,7 @@ class DoctorsScreen extends StatelessWidget {
                                 style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400,
-                                    color: const Color(0xff929292)),
+                                    color: Color(0xff929292)),
                               ),
                             ],
                           )
@@ -347,7 +347,7 @@ class DoctorsScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.02,
                           ),
-                          Text(
+                          const Text(
                             'Type : Follow-ups nutrition',
                             style: TextStyle(
                                 fontSize: 18,
@@ -369,7 +369,7 @@ class DoctorsScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.02,
                           ),
-                          Text(
+                          const Text(
                             'Audio and Video sessions',
                             style: TextStyle(
                                 fontSize: 18,
@@ -391,7 +391,7 @@ class DoctorsScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.02,
                           ),
-                          Text(
+                          const Text(
                             'Arabic , English',
                             style: TextStyle(
                                 fontSize: 18,
@@ -413,7 +413,7 @@ class DoctorsScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.02,
                           ),
-                          Text(
+                          const Text(
                             '10 years of experience',
                             style: TextStyle(
                                 fontSize: 18,
@@ -436,7 +436,7 @@ class DoctorsScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.02,
                           ),
-                          Text(
+                          const Text(
                             'Earliest availability',
                             style: TextStyle(
                                 fontSize: 18,
@@ -444,7 +444,7 @@ class DoctorsScreen extends StatelessWidget {
                                 color: Colors.black),
                           ),
                           const Spacer(),
-                          Text(
+                          const Text(
                             '18/10 - 2:00 pm',
                             style: TextStyle(
                                 fontSize: 14,
@@ -467,7 +467,7 @@ class DoctorsScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.02,
                           ),
-                          Text(
+                          const Text(
                             'Price',
                             style: TextStyle(
                                 fontSize: 18,
@@ -475,7 +475,7 @@ class DoctorsScreen extends StatelessWidget {
                                 color: Colors.black),
                           ),
                           const Spacer(),
-                          Text(
+                          const Text(
                             '400 EGP / 30 minute',
                             style: TextStyle(
                                 fontSize: 14,
@@ -484,25 +484,25 @@ class DoctorsScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
-                      Container(
+                      SizedBox(
                         width: 150,
                         child: ElevatedButton(
                           onPressed: () => _showAlert(context),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFFF25700),
+                            backgroundColor: const Color(0xFFF25700),
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 30, vertical: 12),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               'Book Now!',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -527,18 +527,23 @@ class DoctorsScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(15)),),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+          ),
           child: AlertDialog(
-            title: Center(child: Text('Success Reservation!',style: TextStyle(color: Color(0xffED5500), fontSize: 22),)
-            ),
-            content: Text(
+            title: const Center(
+                child: Text(
+              'Success Reservation!',
+              style: TextStyle(color: Color(0xffED5500), fontSize: 22),
+            )),
+            content: const Text(
               'The appointment has been reserved for you.',
               style: TextStyle(color: Color(0xffED5500), fontSize: 18),
             ),
             actions: <Widget>[
               TextButton(
-                child: Text('OK' ,style: TextStyle(color: Color(0xffED5500), fontSize: 14)),
+                child: const Text('OK',
+                    style: TextStyle(color: Color(0xffED5500), fontSize: 14)),
                 onPressed: () {
                   Navigator.of(context).pop(); // Closes the dialog
                 },

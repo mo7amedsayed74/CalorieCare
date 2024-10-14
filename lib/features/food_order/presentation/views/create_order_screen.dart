@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../components/carbs_and_price.dart';
-import '../components/category.dart';
-import '../cubit/app_cubit/cubit.dart';
-import '../cubit/app_cubit/states.dart';
-import '../custom_widgets/back_button.dart';
-import '../json/jsons.dart';
+import 'widgets/carbs_and_price.dart';
+import 'widgets/category.dart';
+import '../../../../core/json/jsons.dart';
+import 'widgets/back_button.dart';
+import '../manger/app_cubit/cubit.dart';
+import '../manger/app_cubit/states.dart';
 
 class CreateOrderScreen extends StatelessWidget {
   const CreateOrderScreen({super.key});
