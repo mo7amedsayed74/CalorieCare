@@ -9,7 +9,9 @@ class LoginTextField extends StatelessWidget {
   final VoidCallback? onSuffixIconPressed;
   final IconData? suffixIcon;
   final TextInputType keyboardType;
+
   const LoginTextField({
+    super.key,
     required this.controller,
     required this.labelText,
     required this.prefixIcon,
@@ -24,9 +26,7 @@ class LoginTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      style: const TextStyle(
-        color: Color(0xFFF25700),
-      ),
+      style: const TextStyle(color: Color(0xFFF25700)),
       obscureText: obscureText,
       keyboardType: keyboardType,
       decoration: InputDecoration(
@@ -40,12 +40,12 @@ class LoginTextField extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(20)),
           borderSide: BorderSide(color: Color(0xFFF25700)),
         ),
-        prefixIcon: Icon(prefixIcon, color: Color(0xFFF25700)),
+        prefixIcon: Icon(prefixIcon, color: const Color(0xFFF25700)),
         suffixIcon: suffixIcon != null
             ? IconButton(
-          icon: Icon(suffixIcon, color: Color(0xFFF25700)),
-          onPressed: onSuffixIconPressed,
-        )
+                icon: Icon(suffixIcon, color: const Color(0xFFF25700)),
+                onPressed: onSuffixIconPressed,
+              )
             : null,
         errorText: errorText,
       ),

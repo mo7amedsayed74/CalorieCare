@@ -1,5 +1,5 @@
+import 'package:calorie_care/core/utiles/functions/snackbar.dart';
 import 'package:calorie_care/features/auth/presentation/views/register_page.dart';
-import 'package:calorie_care/features/app_services/presentation/views/welcome_screen.dart';
 import 'package:calorie_care/features/auth/presentation/views/widgets/login_button.dart';
 import 'package:calorie_care/features/auth/presentation/views/widgets/login_image.dart';
 import 'package:calorie_care/features/auth/presentation/views/widgets/login_link.dart';
@@ -82,17 +82,13 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthCubit,AuthStates>(
-      listener: (context,state){
-        if(state is LoginSuccessState){
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const WelcomeScreen(),
-            ),
+    return BlocListener<AuthCubit, AuthStates>(
+      listener: (context, state) {
+        if (state is LoginErrorState) {
+          showMySnackBar(
+            context: context,
+            msg: state.error,
           );
-        }else{
-          /// TODO  SnackBar
         }
       },
       child: Scaffold(
@@ -123,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                     prefixIcon: Icons.lock,
                     obscureText: _obscureText,
                     suffixIcon:
-                    _obscureText ? Icons.visibility : Icons.visibility_off,
+                        _obscureText ? Icons.visibility : Icons.visibility_off,
                     onSuffixIconPressed: _togglePasswordVisibility,
                     errorText: _passwordError,
                   ),
@@ -131,18 +127,13 @@ class _LoginPageState extends State<LoginPage> {
                   LoginButton(
                     text: 'Login',
                     onPressed: () {
-                      if (_formKey.currentState?.validate() ?? false){
+                      if (_formKey.currentState?.validate() ?? false) {
                         AuthCubit.get(context).userLogin(
                           email: _emailController.text,
                           password: _passwordController.text,
+                          context: context,
                         );
                       }
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => const WelcomeScreen(),
-                      //   ),
-                      // );
                     },
                   ),
                   const SizedBox(height: 20),

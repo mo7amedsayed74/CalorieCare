@@ -20,3 +20,8 @@ class RegisterErrorState extends AuthStates{
   RegisterErrorState(this.error);
 }
 
+
+class VerificationSuccessState extends AuthStates{}
+class VerificationFailureState extends AuthStates{}
+
+

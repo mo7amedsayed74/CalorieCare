@@ -1,3 +1,4 @@
+import 'package:calorie_care/core/shared_widgets/progress_indicator.dart';
 import 'package:calorie_care/features/auth/presentation/views/login_page.dart';
 import 'package:calorie_care/features/auth/presentation/views/widgets/login_button.dart';
 import 'package:calorie_care/features/auth/presentation/views/widgets/login_image.dart';
@@ -134,126 +135,123 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthCubit,AuthStates>(
-      listener: (context,state){
-        if(state is RegisterSuccessState){
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const LoginPage(),
-            ),
-          );
-        }else{
-          /// TODO  SnackBar
-        }
-      },
-      child: Scaffold(
-        backgroundColor: const Color(0xffEFEBDA),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const LoginImage(topPadding: 0),
-                  const LoginTitle(title: 'REGISTER'),
+    return BlocBuilder<AuthCubit, AuthStates>(
+      builder: (context, state) {
+        return Scaffold(
+          backgroundColor: const Color(0xffEFEBDA),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const LoginImage(topPadding: 0),
+                    const LoginTitle(title: 'REGISTER'),
 
-                  const SizedBox(height: 5),
+                    const SizedBox(height: 5),
 
-                  // Name field
-                  LoginTextField(
-                    controller: _nameController,
-                    labelText: 'Name',
-                    prefixIcon: Icons.person,
-                    errorText: _nameError,
-                    onSuffixIconPressed: () {},
-                  ),
-                  const SizedBox(height: 20),
+                    // Name field
+                    LoginTextField(
+                      controller: _nameController,
+                      labelText: 'Name',
+                      prefixIcon: Icons.person,
+                      errorText: _nameError,
+                      onSuffixIconPressed: () {},
+                    ),
+                    const SizedBox(height: 20),
 
-                  // Email field
-                  LoginTextField(
-                    keyboardType: TextInputType.emailAddress,
-                    controller: _emailController,
-                    labelText: 'Email',
-                    prefixIcon: Icons.email,
-                    errorText: _emailError,
-                    onSuffixIconPressed: () {},
-                  ),
-                  const SizedBox(height: 20),
+                    // Email field
+                    LoginTextField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: _emailController,
+                      labelText: 'Email',
+                      prefixIcon: Icons.email,
+                      errorText: _emailError,
+                      onSuffixIconPressed: () {},
+                    ),
+                    const SizedBox(height: 20),
 
-                  // Phone field
-                  LoginTextField(
-                    keyboardType: TextInputType.phone,
-                    controller: _phoneController,
-                    labelText: 'Phone',
-                    prefixIcon: Icons.phone,
-                    errorText: _phoneError,
-                    onSuffixIconPressed: () {},
-                  ),
-                  const SizedBox(height: 20),
+                    // Phone field
+                    LoginTextField(
+                      keyboardType: TextInputType.phone,
+                      controller: _phoneController,
+                      labelText: 'Phone',
+                      prefixIcon: Icons.phone,
+                      errorText: _phoneError,
+                      onSuffixIconPressed: () {},
+                    ),
+                    const SizedBox(height: 20),
 
-                  // Password field
-                  LoginTextField(
-                    controller: _passwordController,
-                    labelText: 'Password',
-                    prefixIcon: Icons.lock,
-                    obscureText: _obscureTextPassword,
-                    errorText: _passwordError,
-                    suffixIcon: _obscureTextPassword
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                    onSuffixIconPressed: _togglePasswordVisibility,
-                  ),
-                  const SizedBox(height: 20),
+                    // Password field
+                    LoginTextField(
+                      controller: _passwordController,
+                      labelText: 'Password',
+                      prefixIcon: Icons.lock,
+                      obscureText: _obscureTextPassword,
+                      errorText: _passwordError,
+                      suffixIcon: _obscureTextPassword
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      onSuffixIconPressed: _togglePasswordVisibility,
+                    ),
+                    const SizedBox(height: 20),
 
-                  // Confirm Password field
-                  LoginTextField(
-                    controller: _confirmPasswordController,
-                    labelText: 'Confirm Password',
-                    prefixIcon: Icons.lock,
-                    obscureText: _obscureTextConfirmPassword,
-                    errorText: _confirmPasswordError,
-                    suffixIcon: _obscureTextConfirmPassword
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                    onSuffixIconPressed: _toggleConfirmPasswordVisibility,
-                  ),
-                  const SizedBox(height: 20),
+                    // Confirm Password field
+                    LoginTextField(
+                      controller: _confirmPasswordController,
+                      labelText: 'Confirm Password',
+                      prefixIcon: Icons.lock,
+                      obscureText: _obscureTextConfirmPassword,
+                      errorText: _confirmPasswordError,
+                      suffixIcon: _obscureTextConfirmPassword
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      onSuffixIconPressed: _toggleConfirmPasswordVisibility,
+                    ),
+                    const SizedBox(height: 20),
 
-                  // Register button
-                  LoginButton(
-                    text: 'Register',
-                    onPressed: () {
-                      if (_formKey.currentState?.validate() ?? false) {
-                        AuthCubit.get(context).userRegister(
-                          name: _nameController.text,
-                          phone: _phoneController.text,
-                          email: _emailController.text,
-                          password: _passwordController.text,
+                    if (state is RegisterLoadingState)
+                      const MyCircularProgressIndicator()
+                    else
+                      LoginButton(
+                        text: 'Register',
+                        onPressed: () {
+                          if (_formKey.currentState?.validate() ?? false) {
+                            //print('valid!!!!!!!!!!!!!!!!');
+                            AuthCubit.get(context).userRegister(
+                              name: _nameController.text,
+                              phone: _phoneController.text,
+                              email: _emailController.text,
+                              password: _passwordController.text,
+                              context: context,
+                            );
+                          }
+                        },
+                      ),
+
+                    const SizedBox(height: 20),
+
+                    // Login link
+                    LoginLink(
+                      text: 'Already have an account? Login',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginPage(),
+                          ),
                         );
-                      }
-                    },
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Login link
-                  LoginLink(
-                    text: 'Already have an account? Login',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const LoginPage()),
-                      );
-                    },
-                  ),
-                ],
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
