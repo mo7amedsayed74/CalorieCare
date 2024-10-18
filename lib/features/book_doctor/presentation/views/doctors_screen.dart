@@ -1,3 +1,4 @@
+import 'package:calorie_care/features/book_doctor/presentation/views/widgets/doctor_card.dart';
 import 'package:flutter/material.dart';
 
 class DoctorsScreen extends StatelessWidget {
@@ -8,284 +9,46 @@ class DoctorsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Center(
-          child: Row(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: const Color(0xffED5500), // Border color
-                      width: 2.5, // Border width
-                    ),
-                  ),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    size: 25,
-                    color: Color(0xffED5500),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.26,
-              ),
-              const Center(
-                child: Text(
-                  'Doctors',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xffED5500),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
         scrolledUnderElevation: 0,
         backgroundColor: Colors.white,
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_circle_left_outlined,
+            size: 38,
+            color: Color(0xffED5500),
+          ),
+        ),
+        title: const Text(
+          'Doctors',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
+            color: Color(0xffED5500),
+          ),
+        ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Center(
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.574,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border:
-                      Border.all(color: const Color(0xffAFAFAF), width: 0.5),
-                ),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border.all(
-                                  color: const Color(0xffED5500), width: 0.5),
-                            ),
-                            child: const Image(
-                              image: AssetImage(
-                                  'assets/images/doctors/Ellipse 37.png'),
-                            ),
-                          ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.04),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Dr.Ahmed Mohammed',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              Text(
-                                'Nutritionist',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xff929292),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.04),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xffED5500),
-                            size: 25,
-                          ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.02),
-                          const Text(
-                            'Type : Follow-ups nutrition',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.01),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xffED5500),
-                            size: 25,
-                          ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.02),
-                          const Text(
-                            'Audio and Video sessions',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.01),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xffED5500),
-                            size: 25,
-                          ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.02),
-                          const Text(
-                            'Arabic , English',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.01),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xffED5500),
-                            size: 25,
-                          ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.02),
-                          const Text(
-                            '7 years of experience',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                          )
-                        ],
-                      ),
-                      const Divider(
-                        indent: 5,
-                        endIndent: 5,
-                      ),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xffED5500),
-                            size: 25,
-                          ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.02),
-                          const Text(
-                            'Earliest availability',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
-                          ),
-                          const Spacer(),
-                          const Text(
-                            '20/10 - 7:00 pm',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const Divider(
-                        indent: 5,
-                        endIndent: 5,
-                      ),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xffED5500),
-                            size: 25,
-                          ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.02),
-                          const Text(
-                            'Price',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                          ),
-                          const Spacer(),
-                          const Text(
-                            '300 EGP / 30 minute',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 15),
-                      SizedBox(
-                        width: 150,
-                        child: ElevatedButton(
-                          onPressed: () => _showAlert(context),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFF25700),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 30,
-                              vertical: 12,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              'Book Now!',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 25),
-            Center(
+      body: ListView.separated(
+        itemCount: 5,
+        itemBuilder: (context, index) {
+          return const DoctorCard();
+        },
+        separatorBuilder: (context, index) {
+          return const SizedBox(height: 22);
+        },
+      ),
+    );
+  }
+}
+
+/*
+
+
+
+Center(
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.9,
                 height: MediaQuery.of(context).size.height * 0.574,
@@ -516,42 +279,6 @@ class DoctorsScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
-      ),
-    );
-  }
 
-  void _showAlert(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-          ),
-          child: AlertDialog(
-            title: const Center(
-                child: Text(
-              'Success Reservation!',
-              style: TextStyle(color: Color(0xffED5500), fontSize: 22),
-            )),
-            content: const Text(
-              'The appointment has been reserved for you.',
-              style: TextStyle(color: Color(0xffED5500), fontSize: 18),
-            ),
-            actions: <Widget>[
-              TextButton(
-                child: const Text('OK',
-                    style: TextStyle(color: Color(0xffED5500), fontSize: 14)),
-                onPressed: () {
-                  Navigator.of(context).pop(); // Closes the dialog
-                },
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
+
+ */
