@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import '../../../../core/shared_widgets/custom_button.dart';
 import '../../../food_order/presentation/views/details_screen.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+class ServiceSelectionView extends StatelessWidget {
+  const ServiceSelectionView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:calorie_care/core/utiles/functions/snackbar.dart';
-import 'package:calorie_care/features/app_services/presentation/views/welcome_screen.dart';
+import 'package:calorie_care/features/app_services/presentation/views/service_selection_view.dart';
 import 'package:calorie_care/features/auth/presentation/view_model/auth_cubit/auth_states.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +31,7 @@ class AuthCubit extends Cubit<AuthStates> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const WelcomeScreen(),
+              builder: (context) => const ServiceSelectionView(),
             ),
           );
         }

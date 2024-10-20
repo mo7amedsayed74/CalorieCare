@@ -1,11 +1,11 @@
 import 'package:calorie_care/core/utiles/helper.dart';
+import 'package:calorie_care/features/food_order/presentation/views/create_order_view.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/details_fields.dart';
 import 'widgets/back_button.dart';
 import '../../../../core/shared_widgets/custom_button.dart';
 import '../manger/app_cubit/cubit.dart';
-import 'create_order_screen.dart';
 
 class DetailsScreen extends StatelessWidget {
   DetailsScreen({super.key});
@@ -32,6 +32,7 @@ class DetailsScreen extends StatelessWidget {
           key: formKey,
           child: Column(
             children: [
+              // My Fields
               Expanded(
                 child: MyFields(
                   ageController: ageController,
@@ -49,7 +50,7 @@ class DetailsScreen extends StatelessWidget {
                       height: double.parse(heightController.text),
                       age: double.parse(ageController.text),
                     );
-                    context.push(goTo: const CreateOrderScreen());
+                    context.push(goTo: const CreateOrderView());
                   }
                 },
               ),

@@ -33,6 +33,7 @@ dependencies:
 
   conditional_builder_null_safety: ^0.0.6
   flutter_bloc: ^8.1.6
+  flutter_offline: ^4.0.0
 
   #firebase
   firebase_core: ^3.4.1
