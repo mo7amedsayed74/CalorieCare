@@ -41,8 +41,9 @@ class OrderSummeryScreen extends StatelessWidget {
                     builder: (context) => ListView.separated(
                       itemBuilder: (context, index) {
                         return OrderSummaryCard(
-                            item: AppCubit.get(context)
-                                .orders[cubit.keysOfOrders[index]]!);
+                          item: AppCubit.get(context)
+                              .orders[cubit.keysOfOrders[index]]!,
+                        );
                       },
                       separatorBuilder: (context, index) =>
                           const SizedBox(height: 8),

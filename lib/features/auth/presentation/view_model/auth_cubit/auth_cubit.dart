@@ -59,12 +59,10 @@ class AuthCubit extends Cubit<AuthStates> {
 
     try {
       // Create user with email and password
-      await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
-      )
-          .then((val) {
+      ).then((val) {
         if (context.mounted) {
           Navigator.push(
             context,
